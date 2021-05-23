@@ -1,0 +1,13 @@
+<div class="row" style= "margin-left:10px; margin-right: 15px;">
+  <% @products.all.each do |product| %>
+    <div class="col-sm-6 mb-2" style="width:50%; margin-top:20px; margin-left:-5px">
+			<div>
+        <img class="card-img-top"  style="height: 150px;" src="<%= product.image_url %>" alt="Card image cap">
+        <div class="card-body text-center">
+          <h5 class="card-title"><%= product.name %></h5>
+          <p class="card-text">$<%= product.price %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

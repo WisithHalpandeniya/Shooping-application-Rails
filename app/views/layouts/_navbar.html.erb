@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <body>
+
+    <div id="main" class="headerStyle">
+      <div class="toggle" id="openNav"><i class="fa fa-bars" aria-hidden="true"></i></div>
+      <div id="header", class="headerStyle">
+        <div class="icons"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+        <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
+    </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a class="closebtn" id="closeNav">&times;</a>
+      <a style="display:flex"><i class="fa fa-shopping-cart" aria-hidden="true" style="margin-right: 10%;"></i><div><strong>shop</strong></div></a>
+      <div class="lists list" id="list"><%= link_to "Home", all_home_path , {:style=>'color:black'} %></div>
+      <div class="lists list" id="list"><%= link_to "Men", all_items_path , {:style=>'color:black'} %></div>
+      <div class="lists list" id="list"><%= link_to "Women", all_items_path , {:style=>'color:black'} %></div>
+      <div class="lists list" id="list"><%= link_to "Kids", all_items_path , {:style=>'color:black'} %></div>
+      <div class="lists list" id="list"><%= link_to "New-ins", all_items_path , {:style=>'color:black'} %></div>
+      <hr class="solid">
+      <%# <a style="display:flex; margin-top:20%;"><i class="fa fa-bookmark" aria-hidden="true" style="margin-right: 10%;"></i><div><strong>Saved</strong></div></a> %>
+      <div style="display:flex; margin-top:30%; "><i class="fa fa-bookmark" aria-hidden="true" style="margin-left: 15%; font-size:30px"></i><div><strong><%= link_to "Saved", saved_index_path , {:style=>'color:black'} %></strong></div></div>
+
+      <a style="display:flex; margin-top:30%;"><i class="fa fa-question-circle" aria-hidden="true" style="margin-right: 10%;"></i><div><strong>help and support</strong></div></a>
+    </div>
+  </body>
+</html>
+            

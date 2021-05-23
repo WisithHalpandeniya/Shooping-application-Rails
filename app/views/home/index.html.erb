@@ -1,0 +1,89 @@
+<% if flash[:messages] %>
+  	<h1 ><%= flash[:messages]%></h1>
+<% end %>
+<div>
+		<div class="hero-image" style="height: 50vh;" >
+			<% @product = Product.find(Product.pluck(:id).sample) %>
+			<img class="card-img-top"  style="height: 100%; width: 100%;" src="<%= @product.image_url %>" alt="Card image cap">
+			<div class="hero-text" style="display:flex; justify-content:space-between; width: 85%;">
+				<div>
+					<h1 style="font-size:30px"><%= Product.first.name %></h1>
+					<p style="text-align: initial; font-size:20px">$<%= Product.first.price %></p>
+				</div>
+			</div>
+			<div class="hero-text" style="margin-top:10%; margin-left:80%">
+				<%= link_to saved_index_path(:product=>@product.id), method: :post  do%><i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 40px; color:white"></i><% end %>
+			</div>
+
+		</div>
+		<% if flash[:messages] %>
+  		<h1 ><%= flash[:messages]%></h1>
+		<% end %>
+	<div style="display: flex;justify-content: space-between;margin-top:50px">
+		<div><Strong style="font-size:30px; margin-left:20px;">Popular</Strong></div>
+		<div style="font-size:20px; padding-top:10px"><%= link_to "see all", all_items_path , {:style=>'color:black', :class=>'list'} %><i class="fa fa-plus" aria-hidden="true" style="margin-left:20px; margin-right:20px"></i></div>
+	</div>
+	<div style="display: flex;margin-left:3%">
+		<% @products.all.limit(2).each do |product| %>
+			<div class="m-3" style="width:40%; margin-left:3px;">
+				<div>
+					<img class="card-img-top"  style="height: 150px;" src="<%= product.image_url %>" alt="Card image cap">
+					<div class="card-body text-center">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text">Price: <%= product.price %>$</p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<hr class="solid"  style="margin-left:20px; margin-right:20px">
+	<div style="display: flex;justify-content: space-between;margin-top:20px">
+		<div><Strong style="font-size:30px; margin-left:20px;">Collections</Strong></div>
+		<div style="font-size:20px; padding-top:10px"><%= link_to "see all", all_items_path , {:style=>'color:black', :class=>'list'} %><i class="fa fa-plus" aria-hidden="true" style="margin-left:20px; margin-right:20px"></i></div>
+	</div>
+	<div style="width:90%;margin-left:15px; margin-top:20px">
+		<div class="container">
+			<img class="card-img-top"  style="height: 150px;" src="<%= Product.last.image_url %>" alt="Card image cap">
+			<div class="bottom-left"><%= link_to "Women", all_items_path , {:style=>'color:black', :class=>'list'} %>
+			<p style="text-align: initial; font-size:10px">5 ITEMS</p>
+			</div>
+		</div>
+	</div>
+	<div style="display: flex;justify-content: space-between;">
+		<div class="m-3" style="width:45%">
+			<div class="container">
+				<img class="card-img-top"  style="height: 150px;" src="<%= Product.second.image_url %>" alt="Card image cap">
+				<div class="bottom-left"><%= link_to "Mens", all_items_path , {:style=>'color:black', :class=>'list'} %>
+				<p style="text-align: initial; font-size:10px">5 ITEMS</p>
+				</div>
+			</div>
+			<div class="container" style="margin-top:20px">
+				<img class="card-img-top"  style="height: 150px;" src="<%= Product.first.image_url %>" alt="Card image cap">
+				<div class="bottom-left"><%= link_to "Kids", all_items_path , {:style=>'color:black', :class=>'list'} %>
+				<p style="text-align: initial; font-size:10px">5 ITEMS</p>
+				</div>
+			</div>
+		</div>
+		<div style="width:50%; height:50%; margin: 15px 20px 0px -30px">
+			<div class="container">
+				<img class="card-img-top"  style="height: 320px;" src="<%= Product.first.image_url %>" alt="Card image cap">
+				<div class="bottom-left"><%= link_to "New-ins", all_items_path , {:style=>'color:black', :class=>'list'} %>
+				<p style="text-align: initial; font-size:10px">5 ITEMS</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="margin-top:20px">
+		<div><Strong style="font-size:30px; margin-left:20px;">Newsletter</Strong></div>
+		<div style="font-size:20px; padding-top:5px; margin-left:20px;">signup with our news letter.</div>
+	</div>
+	<%= form_tag "/news_letter/create" do %>
+		<%= text_field_tag "email"%>
+		<%= submit_tag "Register" %>
+	<% end %>
+	<hr class="solid"  style="margin-left:20px; margin-right:20px">
+
+
+
+</div>

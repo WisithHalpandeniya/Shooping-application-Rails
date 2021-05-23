@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: postgres
+  password: Wimalrita@69
+
+development:
+  <<: *default
+  database: shop_dev
+
+test:
+  <<: *default
+  database: shop_test
+
+production:
+  <<: *default
+
