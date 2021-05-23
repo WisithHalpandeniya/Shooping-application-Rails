@@ -13,7 +13,11 @@ Things you may want to cover:
 
 * Database creation = pg
 
-* Run rails db:migrate 
-
-* Run rails server
+run:
+* Bundle install
+* rails db:create
+* rails db:migrate 
+* rails db:seed
+* rails app:populate
+*
 # shop_1
