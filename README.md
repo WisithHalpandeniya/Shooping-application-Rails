@@ -1,7 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+name and id: Wisith Halpandeniya Hevage s3728665 
+contribution: 100%
+leveled attempted: CR
+
+Heroku: https://s3728665shop5.herokuapp.com/
+
 
 Things you may want to cover:
 
