@@ -5,9 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version = ruby 2.6.1p33
+* Ruby version = ruby 2.7.3p33
 
-* Database creation = sqlite
+* Database creation = pg
 
 * Run rails db:migrate 
 
