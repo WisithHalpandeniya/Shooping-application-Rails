@@ -4,7 +4,7 @@ name and id: Wisith Halpandeniya Hevage s3728665
 contribution: 100%
 leveled attempted: CR
 
-Heroku: https://s3728665shop5.herokuapp.com/
+Link to open Web page: https://s3728665shop5.herokuapp.com/
 
 
 Things you may want to cover:
